@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INOFORM - Página Principal</title>
+    <link rel="stylesheet" href="../static/style.css">
+    <script src="../produtos.js" defer></script>
+    <script src="../banner.js" defer></script>
+    <script src="../carrosel.js" defer></script>
+    <script src="../barra-pesquisa.js" defer></script>
+    <script src="../pagina-produtos.js" defer></script>
+</head>
+
+<body>
+
+    <!-- CABEÇALHO -->
+    <header>
+        <a href="index.html" class="logo">
+        <div class="logo">
+            <img src="../imagens/MaisImagens/Logo.png" alt="Logo da HORIZON">
+        </div>
+        </a> 
+        <div class="barra-pesquisa">
+            <input type="text" id="campo-pesquisa" placeholder="Pesquisar" autocomplete="off">
+            <button type="button" id="botao-pesquisa">Pesquisar</button>
+            <ul id="resultados-pesquisa" class="resultados-pesquisa"></ul>
+        </div>
+
+        <div class="icones">
+            <a href="cadastro.html">
+                <img src="../imagens/MaisImagens/Login.png" alt="Ícone de Perfil">
+            </a>
+        
+            <a href="carrinho.html">
+                <img src="../imagens/MaisImagens/Carrinho.png" alt="Ícone de Carrinho">
+            </a>
+        </div>
+    </header>
+
+    <!-- MENU -->
+    <nav>
+        <a href="#">INÍCIO</a>
+        <a href="#">SKATE</a>
+        <a href="#">BMX</a>
+        <a href="#">ROUPAS</a>
+        <a href="#">ACESSÓRIOS</a>
+        <a href="#">MARCAS</a>
+    </nav>
+
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main>
+
+        <!-- ENCONTRE SUA MARCA -->
+        <section class="marcas">
+
+            <h2>Encontre sua marca</h2>
+
+            <div class="marcas-lista">
+                <div><img src="../imagens/Marcas/Nike.png" alt="Marca 1"></div>
+                <div><img src="../imagens/Marcas/Adidas.png" alt="Marca 2"></div>
+                <div><img src="../imagens/Marcas/Asics.png" alt="Marca 3"></div>
+                <div class = "Ol"><img src="../imagens/Marcas/Olympikus.png" alt="Marca 4"></div>
+                <div><img src="../imagens/Marcas/Puma.png" alt="Marca 5"></div>
+            </div>
+
+        </section>
+
+
+<section class="banner">
+
+    <div class="banner-slides">   <!-- NOVO -->
+        <a href="skate.html" class="banner-slide ativo">
+            <img src="../imagens/Banner/B1.png" alt="Banner 1">
+        </a>
+        <a href="ciclismo.html" class="banner-slide">
+            <img src="../imagens/Banner/B2.png" alt="Banner 2">
+        </a>
+        <a href="rock.html" class="banner-slide">
+            <img src="../imagens/Banner/B3.png" alt="Banner 3">
+        </a>
+        <a href="vibe.html" class="banner-slide">
+            <img src="../imagens/Banner/B4.png" alt="Banner 4">
+        </a>
+    </div>                        <!-- NOVO -->
+
+    <div class="banner-pontos">
+        <button class="ponto ativo" onclick="irParaBanner(0)"></button>
+        <button class="ponto" onclick="irParaBanner(1)"></button>
+        <button class="ponto" onclick="irParaBanner(2)"></button>
+        <button class="ponto" onclick="irParaBanner(3)"></button>
+    </div>
+
+</section>
+        <!-- SUGESTÕES -->
+        <section class="sugestoes">
+
+            <h2>Sugestões</h2>
+
+            <div class="carrossel">
+
+    <div class="produtos" id="produtos">
+
+        <article class="produto">
+            <a href="produto.html?id=munhequeira-nike-jordan">
+            <div class="produto-img">
+               <img src="../imagens/Carrosel/C1.png" alt="Produto 1">
+            </div>
+            </a>
+
+            <h3>Munhequeira Nike Jordan Jumpman Com 02 Unidades Preta e Branca</h3>
+            <strong>R$ 199,90</strong>
+        </article>
+
+
+
+        <article class="produto"> 
+            <a href="produto.html?id=chuteira-copa-league">
+            <div class="produto-img">
+                <img src="../imagens/Carrosel/C2.png" alt="Produto 2">
+            </div>
+            </a>
+
+
+            <h3>Chuteira Adulta de Futebol Society Copa League Adidas Preta</h3>
+            <strong>R$ 664,99</strong>
+        </article>
+
+
+
+        <article class="produto">
+            <a href="produto.html?id=tabela-basquete">
+            <div class="produto-img">
+                <img src="../imagens/Carrosel/C3.png" alt="Produto 3">
+            </div>
+            </a>
+
+
+            <h3>Tabela de Basquete Regulável 2,20m a 3,05m Tarmak Preto</h3>
+            <strong>R$ 1424,99</strong>
+        </article>
+
+
+
+        
+
+        <article class="produto">
+            <a href="produto.html?id=caramanhola-squeeze">
+            <div class="produto-img">
+                <img src="../imagens/Carrosel/C4.png" alt="Produto 4">
+            </div>
+            </a>
+
+
+            <h3>Caramanhola Squeeze Térmica 680ml Garrafa Agua Ciclismo Tsw Cor Cinza</h3>
+            <strong>R$ 68,21</strong>
+        </article>
+
+
+
+        <article class="produto">
+            <a href="produto.html?id=5">
+            <div class="produto-img">
+                <img src="../imagens/Carrosel/C5.png" alt="Produto 5">
+            </div>
+            </a>
+
+            <h3>Men's San Antonio Spurs Victor Wembanyama Fanatics Black Fast Break Replica Jersey - Icon Edition</h3>
+            <strong>R$ 79,90</strong>
+        </article>
+
+        <article class="produto">
+            <div class="produto-img">
+                <img src="../imagens/Carrosel/C6.png" alt="Produto 6">
+            </div>
+
+            <h3>Produto 6</h3>
+            <p>Descrição do produto</p>
+            <strong>R$ 00,00</strong>
+        </article>
+
+    </div>
+
+</div>
+
+<div class="barra-carrossel">
+    <div id="barra-progresso"></div>
+</div>
+
+        </section>
+
+
+        <!-- CATEGORIAS -->
+        <section class="categorias">
+
+            <div class="categoria">
+                <h2>Basquete</h2>
+                <div><img src="../imagens/Esportes/Ebasquete.png" alt="Basquete"></div>
+            </div>
+
+            <div class="categoria">
+                <h2>Ciclismo</h2>
+                <div><img src="../imagens/Esportes/Eciclismo.png" alt="Ciclismo"></div>
+            </div>
+
+            <div class="categoria">
+                <h2>Boxe</h2>
+                <div><img src="../imagens/Esportes/Eboxe.png" alt="Boxe"></div>
+            </div>
+
+            <div class="categoria">
+                <h2>Volei</h2>
+                <div><img src="../imagens/Esportes/Evolei.png" alt="Volei"></div>
+            </div>
+
+        </section>
+
+
+        <!-- OUTROS PRODUTOS -->
+        <section class="outros-produtos">
+
+            <article class="produto pequeno">
+                <a href="produto.html?id=asics-nimbus">
+                <div class="produto-img">
+                    <img src="../imagens/OutrosItens/Oit1.png" alt="Produto 1">
+                </div>
+                </a>
+
+                <h3>Tênis ASICS Gel-Nimbus 27 Masculino</h3>
+                <strong>R$ 799,90</strong>
+            </article>
+
+
+            <article class="produto pequeno">
+                <a href="produto.html?id=bola-de-basquete">
+                <div class="produto-img">
+                    <img src="../imagens/OutrosItens/Oit2.png" alt="Produto 2">
+                </div>
+                </a>
+
+                <h3>Bola de Basquete BT500 Tarmak Marrom</h3>
+                <strong>R$ 134,99</strong>
+            </article>
+
+            <article class="produto pequeno">
+                <a href="produto.html?id=bola-de-volei">
+                <div class="produto-img">
+                    <img src="../imagens/OutrosItens/Oit3.png" alt="Produto 3">
+                </div>
+                </a>
+
+                <h3>Bola de Vôlei de Quadra Mikasa V200W Oficial</h3>
+                <strong>R$ 789,90</strong>
+            </article>
+
+
+            <article class="produto pequeno">
+                <a href="produto.html?id=aparador-maximum">
+                <div class="produto-img">
+                    <img src="../imagens/OutrosItens/Oit4.png" alt="Produto 4">
+                </div>
+                </a>
+
+                <h3>Aparador de Chute e Soco Maximum Alvo Branco - Tam U - Par</h3>
+                <strong>R$ 481,90</strong>
+            </article>
+
+
+            <article class="produto pequeno">
+                <a href="produto.html?id=meia-preta-cano-alto">
+                <div class="produto-img">
+                    <img src="../imagens/OutrosItens/Oit5.png" alt="Produto 5">
+                </div>
+            </a>
+
+                <h3>Meia preta cano alto - 2 pares</h3>
+                <strong>R$ 29,90</strong>
+            </article>
+
+        </section>
+
+
+        <!-- OFERTA -->
+        <section class="oferta">
+
+            <div class="oferta-conteudo">
+
+                <div class="oferta-imagem">
+                    <img src="../imagens/Ofertas/Of1.png" alt="Produto em promoção">
+                </div>
+
+                <div>
+                    <h2>Camisa Masculina de Futebol Torcedor Alemanha ll Away 26/27 Adidas Azul</h2>
+                    <h3>MAIS DE 50% OFF!</h3>
+                    <div class="precos">
+                        <span class="preco-antigo">R$ 427,49</span>
+                        <strong class="preco-novo">R$ 199,90</strong>
+                    </div>
+
+                    <button>VER OFERTAS</button>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- OFERTAS MENORES -->
+        <section class="ofertas-menores">
+
+            <article>
+                <div class="oferta-texto">
+                    <h3>One Sport Bandagem Atadura Elastica Muay Thai Boxe</h3>
+                    <p>Confira essa oferta especial.</p>
+
+                    <span class="preco-antigo">R$ 31,60</span>
+                    <strong class="preco-novo">R$ 19,90</strong>
+
+                    <button>COMPRAR</button>
+                </div>
+
+                <div>
+                    <img src="../imagens/Ofertas/Of2.png" alt="Produto em promoção">
+                </div>
+            </article>
+
+
+            <article>
+                <div class="oferta-texto">
+                    <h3>Kit Venum Boxe Muay Thai Kickboxing Luva Bandagem Bucal New Impact Evo Profissional</h3>
+                    <p>Confira essa oferta especial.</p>
+
+                    <span class="preco-antigo">R$ 322,99</span>
+                    <strong class="preco-novo">R$ 249,99</strong>
+
+                    <button>COMPRAR</button>
+                </div>
+
+                <div>
+                    <img src="../imagens/Ofertas/Of3.png" alt="Produto em promoção">
+                </div>
+            </article>
+
+        </section>
+
+    </main>
+
+
+    <!-- RODAPÉ -->
+    <footer>
+
+        <div class="footer-logo">
+            <img src="../imagens/MaisImagens/Logo.png" alt="Logo da INOFORM">
+        </div>
+
+        <div class="footer-info">
+            <h3>INOFORM</h3>
+            <p>Sobre nós</p>
+            <p>Contato</p>
+            <p>Política de privacidade</p>
+            <p>Termos de uso</p>
+        </div>
+
+    </footer>
+
+</body>
+</html>

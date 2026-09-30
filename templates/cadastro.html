@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Criar conta</title>
+  <style>
+    /* ===== CORES: mude só aqui ===== */
+    :root {
+      --cor-fundo: #9391CD;         /* fundo da página */
+      --cor-card: #ffffff;           /* fundo do formulário */
+      --cor-texto: #1e293b;          /* texto principal */
+      --cor-texto-suave: #64748b;    /* textos secundários */
+      --cor-borda: #cbd5e1;          /* borda dos campos */
+      --cor-destaque: #716be0;       /* botão e links */
+      --cor-destaque-hover: #5a54c2;
+      --cor-botao-texto: #ffffff;    /* texto do botão */
+      --cor-erro: #dc2626;           /* mensagem de erro */
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background: var(--cor-fundo);
+      color: var(--cor-texto);
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    }
+
+    /* Logo no canto, com link pro index */
+    .topo { padding: 18px 32px; }
+    .logo { display: inline-block; line-height: 0; }
+    .logo img { height: 120px; width: auto; display: block; }
+
+    /* Centraliza o card no espaço que sobra */
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 20px 28px;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 460px;
+      background: var(--cor-card);
+      padding: 24px 28px;
+      border-radius: 14px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, .2);
+    }
+
+    h1 { font-size: 1.4rem; margin-bottom: 2px; }
+    .sub { color: var(--cor-texto-suave); margin-bottom: 16px; font-size: .9rem; }
+
+    label { display: block; font-size: .82rem; font-weight: 600; margin-bottom: 4px; }
+
+    input {
+      width: 100%;
+      padding: 9px 12px;
+      margin-bottom: 12px;
+      border: 1px solid var(--cor-borda);
+      border-radius: 8px;
+      font-size: .95rem;
+      color: var(--cor-texto);
+      background: var(--cor-card);
+    }
+    input:focus { outline: 2px solid var(--cor-destaque); outline-offset: 1px; border-color: transparent; }
+
+    /* Senha e confirmar lado a lado */
+    .duas-colunas { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+    .termos {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: .82rem;
+      font-weight: 400;
+      color: var(--cor-texto-suave);
+      margin-bottom: 14px;
+    }
+    .termos input { width: auto; margin: 0; }
+
+    a { color: var(--cor-destaque); text-decoration: none; font-weight: 600; }
+    a:hover { text-decoration: underline; }
+
+    .erro { color: var(--cor-erro); font-size: .82rem; margin: -4px 0 10px; }
+    .erro:empty { display: none; }
+
+    button {
+      width: 100%;
+      padding: 11px;
+      border: 0;
+      border-radius: 8px;
+      background: var(--cor-destaque);
+      color: var(--cor-botao-texto);
+      font-size: .95rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background .15s;
+    }
+    button:hover { background: var(--cor-destaque-hover); }
+    button:focus-visible { outline: 2px solid var(--cor-texto); outline-offset: 2px; }
+
+    .rodape { text-align: center; margin-top: 14px; font-size: .85rem; color: var(--cor-texto-suave); }
+
+    @media (max-width: 480px) {
+      .topo { padding: 14px 20px; }
+      .duas-colunas { grid-template-columns: 1fr; gap: 0; }
+      .card { padding: 22px 20px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topo">
+    <a href="index.html" class="logo">
+      <img src="../imagens/MaisImagens/Logo.png" alt="Logo da INOFORM">
+    </a>
+  </header>
+
+  <main>
+    <section class="card">
+      <h1>Criar conta</h1>
+      <p class="sub">Preencha os dados abaixo para se cadastrar.</p>
+
+      <form action="#" method="post" id="form">
+        <label for="nome">Nome de usuário</label>
+        <input type="text" id="nome" name="nome" placeholder="Seu nome de usuário" required autocomplete="name">
+
+        <label for="email">E-mail</label>
+        <input type="email" id="email" name="email" placeholder="voce@email.com" required autocomplete="email">
+
+        <div class="duas-colunas">
+          <div>
+            <label for="senha">Senha</label>
+            <input type="password" id="senha" name="senha" placeholder="Mín. 6 caracteres" minlength="6" required autocomplete="new-password">
+          </div>
+          <div>
+            <label for="confirmar">Confirmar senha</label>
+            <input type="password" id="confirmar" name="confirmar" placeholder="Repita a senha" required autocomplete="new-password">
+          </div>
+        </div>
+        <p class="erro" id="erro" role="alert"></p>
+
+        <label class="termos">
+          <input type="checkbox" name="termos" required>
+          <span>Li e aceito os <a href="#">termos de uso</a>.</span>
+        </label>
+
+        <button type="submit">Criar conta</button>
+      </form>
+
+      <p class="rodape">Já tem conta? <a href="login.html">Entrar</a></p>
+    </section>
+  </main>
+
+  <script>
+    document.getElementById('form').addEventListener('submit', function (e) {
+      var igual = document.getElementById('senha').value === document.getElementById('confirmar').value;
+      document.getElementById('erro').textContent = igual ? '' : 'As senhas não são iguais.';
+      if (!igual) e.preventDefault();
+    });
+  </script>
+</body>
+</html>

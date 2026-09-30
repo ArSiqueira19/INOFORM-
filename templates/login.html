@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Entrar</title>
+  <style>
+    /* ===== CORES: mude só aqui (iguais às do cadastro) ===== */
+    :root {
+      --cor-fundo: #9391CD;
+      --cor-card: #ffffff;
+      --cor-texto: #1e293b;
+      --cor-texto-suave: #64748b;
+      --cor-borda: #cbd5e1;
+      --cor-destaque: #716be0;
+      --cor-destaque-hover: #5a54c2;
+      --cor-botao-texto: #ffffff;
+      --cor-erro: #dc2626;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background: var(--cor-fundo);
+      color: var(--cor-texto);
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    }
+
+    /* Logo no canto, com link pro index */
+    .topo { padding: 18px 32px; }
+    .logo { display: inline-block; line-height: 0; }
+    .logo img { height: 120px; width: auto; display: block; }
+
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 20px 28px;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 400px;
+      background: var(--cor-card);
+      padding: 24px 28px;
+      border-radius: 14px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, .2);
+    }
+
+    h1 { font-size: 1.4rem; margin-bottom: 2px; }
+    .sub { color: var(--cor-texto-suave); margin-bottom: 16px; font-size: .9rem; }
+
+    label { display: block; font-size: .82rem; font-weight: 600; margin-bottom: 4px; }
+
+    input {
+      width: 100%;
+      padding: 9px 12px;
+      margin-bottom: 12px;
+      border: 1px solid var(--cor-borda);
+      border-radius: 8px;
+      font-size: .95rem;
+      color: var(--cor-texto);
+      background: var(--cor-card);
+    }
+    input:focus { outline: 2px solid var(--cor-destaque); outline-offset: 1px; border-color: transparent; }
+
+    .opcoes {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      font-size: .82rem;
+      margin-bottom: 14px;
+    }
+    .lembrar {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0;
+      font-weight: 400;
+      color: var(--cor-texto-suave);
+    }
+    .lembrar input { width: auto; margin: 0; }
+
+    a { color: var(--cor-destaque); text-decoration: none; font-weight: 600; }
+    a:hover { text-decoration: underline; }
+
+    .erro { color: var(--cor-erro); font-size: .82rem; margin: -4px 0 10px; }
+    .erro:empty { display: none; }
+
+    button {
+      width: 100%;
+      padding: 11px;
+      border: 0;
+      border-radius: 8px;
+      background: var(--cor-destaque);
+      color: var(--cor-botao-texto);
+      font-size: .95rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background .15s;
+    }
+    button:hover { background: var(--cor-destaque-hover); }
+    button:focus-visible { outline: 2px solid var(--cor-texto); outline-offset: 2px; }
+
+    .rodape { text-align: center; margin-top: 14px; font-size: .85rem; color: var(--cor-texto-suave); }
+
+    @media (max-width: 480px) {
+      .topo { padding: 14px 20px; }
+      .card { padding: 22px 20px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topo">
+    <a href="index.html" class="logo">
+      <img src="../imagens/MaisImagens/Logo.png" alt="Logo da INOFORM">
+    </a>
+  </header>
+
+  <main>
+    <section class="card">
+      <h1>Entrar</h1>
+      <p class="sub">Use o e-mail e a senha da sua conta.</p>
+
+      <form action="#" method="post" id="form">
+        <label for="email">E-mail</label>
+        <input type="email" id="email" name="email" placeholder="voce@email.com" required autocomplete="email">
+
+        <label for="senha">Senha</label>
+        <input type="password" id="senha" name="senha" placeholder="Sua senha" required autocomplete="current-password">
+        <p class="erro" id="erro" role="alert"></p>
+
+        <div class="opcoes">
+          <label class="lembrar">
+            <input type="checkbox" name="lembrar">
+            Lembrar de mim
+          </label>
+          <a href="#">Esqueci a senha</a>
+        </div>
+
+        <button type="submit">Entrar</button>
+      </form>
+
+      <p class="rodape">Não tem conta? <a href="cadastro.html">Criar conta</a></p>
+    </section>
+  </main>
+
+  <script>
+    document.getElementById('form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      // TODO: conferir e-mail e senha no seu servidor aqui.
+      // Se estiver certo, vai pra página inicial:
+      window.location.href = 'index.html';
+    });
+  </script>
+</body>
+</html>
