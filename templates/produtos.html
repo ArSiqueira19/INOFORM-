@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INOFORM - Produtos</title>
+    <link rel="stylesheet" href="../static/style.css">
+    <script src="../produtos.js" defer></script>
+    <script src="../barra-pesquisa.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="header-topo">
+            <a href="index.html" class="logo" aria-label="Ir para a home">
+                <img src="../imagens/MaisImagens/Logo.png" alt="Logo da INOFORM">
+            </a>
+
+            <form class="barra-pesquisa" role="search">
+                <input type="search" id="campo-pesquisa" placeholder="O que você procura hoje?" aria-label="Pesquisar" autocomplete="off">
+                <button type="button" id="botao-pesquisa">Buscar</button>
+                <ul class="resultados-pesquisa" id="resultados-pesquisa"></ul>
+            </form>
+
+            <div class="icones">
+                <a href="login.html" title="Minha Conta">
+                    <img src="../imagens/MaisImagens/Login.png" alt="Conta">
+                </a>
+                <a href="carrinho.html" title="Carrinho de Compras" aria-label="Carrinho">
+                    <img src="../imagens/MaisImagens/carrinho.png" alt="Carrinho">
+                    <span class="badge" data-cart-badge>0</span>
+                </a>
+            </div>
+        </div>
+
+        <nav class="menu" aria-label="Categorias">
+            <div class="item">
+                <a href="produtos.html?cat=masculino">Masculino</a>
+                <div class="mega">
+                    <div>
+                        <h4>Roupas</h4>
+                        <a href="produtos.html?cat=masculino&tipo=camisetas">Camisetas</a>
+                        <a href="produtos.html?cat=masculino&tipo=shorts">Shorts</a>
+                        <a href="produtos.html?cat=masculino&tipo=jaquetas">Jaquetas</a>
+                        <a href="produtos.html?cat=masculino&tipo=conjuntos">Conjuntos</a>
+                    </div>
+                    <div>
+                        <h4>Calçados</h4>
+                        <a href="produtos.html?cat=masculino&tipo=tenis">Tênis</a>
+                        <a href="produtos.html?cat=masculino&tipo=chuteiras">Chuteiras</a>
+                        <a href="produtos.html?cat=masculino&tipo=chinelos">Chinelos</a>
+                    </div>
+                    <a class="destaque" href="produtos.html?cat=masculino">
+                        <strong>Tudo para ele</strong>
+                        <span>Ver todos os produtos</span>
+                    </a>
+                </div>
+            </div>
+            <div class="item">
+                <a href="produtos.html?cat=feminino">Feminino</a>
+                <div class="mega">
+                    <div>
+                        <h4>Roupas</h4>
+                        <a href="produtos.html?cat=feminino&tipo=tops">Tops</a>
+                        <a href="produtos.html?cat=feminino&tipo=leggings">Leggings</a>
+                        <a href="produtos.html?cat=feminino&tipo=camisetas">Camisetas</a>
+                        <a href="produtos.html?cat=feminino&tipo=conjuntos">Conjuntos</a>
+                    </div>
+                    <div>
+                        <h4>Calçados</h4>
+                        <a href="produtos.html?cat=feminino&tipo=tenis">Tênis</a>
+                        <a href="produtos.html?cat=feminino&tipo=sandalias">Sandálias</a>
+                        <a href="produtos.html?cat=feminino&tipo=chinelos">Chinelos</a>
+                    </div>
+                    <a class="destaque" href="produtos.html?cat=feminino">
+                        <strong>Tudo para ela</strong>
+                        <span>Ver todos os produtos</span>
+                    </a>
+                </div>
+            </div>
+            <div class="item">
+                <a href="produtos.html?cat=infantil">Infantil</a>
+                <div class="mega">
+                    <div>
+                        <h4>Roupas</h4>
+                        <a href="produtos.html?cat=infantil&tipo=camisetas">Camisetas</a>
+                        <a href="produtos.html?cat=infantil&tipo=shorts">Shorts</a>
+                        <a href="produtos.html?cat=infantil&tipo=conjuntos">Conjuntos</a>
+                    </div>
+                    <div>
+                        <h4>Calçados</h4>
+                        <a href="produtos.html?cat=infantil&tipo=tenis">Tênis</a>
+                        <a href="produtos.html?cat=infantil&tipo=chinelos">Chinelos</a>
+                    </div>
+                    <a class="destaque" href="produtos.html?cat=infantil">
+                        <strong>Para os pequenos</strong>
+                        <span>Ver todos os produtos</span>
+                    </a>
+                </div>
+            </div>
+            <div class="item">
+                <a href="produtos.html?cat=acessorios">Acessórios</a>
+                <div class="mega">
+                    <div>
+                        <h4>Esporte</h4>
+                        <a href="produtos.html?cat=acessorios&tipo=bolas">Bolas</a>
+                        <a href="produtos.html?cat=acessorios&tipo=mochilas">Mochilas</a>
+                        <a href="produtos.html?cat=acessorios&tipo=garrafas">Garrafas</a>
+                    </div>
+                    <div>
+                        <h4>Dia a dia</h4>
+                        <a href="produtos.html?cat=acessorios&tipo=bones">Bonés</a>
+                        <a href="produtos.html?cat=acessorios&tipo=meias">Meias</a>
+                        <a href="produtos.html?cat=acessorios&tipo=relogios">Relógios</a>
+                    </div>
+                    <a class="destaque" href="produtos.html?cat=acessorios">
+                        <strong>Complete o look</strong>
+                        <span>Ver todos os produtos</span>
+                    </a>
+                </div>
+            </div>
+            <div class="item esportes">
+                <a href="produtos.html?esporte=todos" aria-haspopup="true">Esportes</a>
+                <div class="mega mega-esportes">
+                    <div>
+                        <a href="produtos.html?esporte=futebol">Futebol</a>
+                        <a href="produtos.html?esporte=basquete">Basquete</a>
+                        <a href="produtos.html?esporte=volei">Vôlei</a>
+                    </div>
+                    <div>
+                        <a href="produtos.html?esporte=natacao">Natação</a>
+                        <a href="produtos.html?esporte=ciclismo">Ciclismo</a>
+                        <a href="produtos.html?esporte=esgrima">Esgrima</a>
+                    </div>
+                    <div>
+                        <a href="produtos.html?esporte=corrida">Corrida</a>
+                        <a href="produtos.html?esporte=jiu-jitsu">Jiu-Jitsu</a>
+                        <a href="produtos.html?esporte=boxe">Boxe</a>
+                    </div>
+                </div>
+            </div>
+            <div class="item"><a href="ofertas.html">Ofertas</a></div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="catalogo-topo" style="padding: 50px 70px 20px;">
+            <p class="breadcrumb"><a href="index.html">Início</a> / Produtos</p>
+            <h1 id="titulo-categoria" style="font-size: clamp(2rem, 4vw, 3rem); color: #181574; margin-bottom: 20px;">Produtos</h1>
+        </section>
+
+        <section id="catalogo" class="catalogo-grid">
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-logo">
+            <img src="../imagens/MaisImagens/Logo.png" alt="Logo da INOFORM">
+        </div>
+        <div class="footer-info">
+            <h3>INOFORM</h3>
+            <p>Sobre nós</p>
+            <p>Contato</p>
+            <p>Política de privacidade</p>
+            <p>Termos de uso</p>
+        </div>
+    </footer>
+
+    <script>
+        const parametros = new URLSearchParams(window.location.search);
+        const categoria = parametros.get('cat') || 'todos';
+        const esporte = parametros.get('esporte');
+        const paginaEsportes = parametros.has('esporte');
+        const tituloCategoria = document.getElementById('titulo-categoria');
+        const catalogo = document.getElementById('catalogo');
+        if (paginaEsportes) catalogo.classList.add('catalogo-esportes');
+
+        const nomesCategorias = {
+            masculino: 'Masculino',
+            feminino: 'Feminino',
+            infantil: 'Infantil',
+            acessorios: 'Acessórios',
+            todos: 'Todos os produtos'
+        };
+
+        const nomesEsportes = {
+            todos: 'Esportes',
+            futebol: 'Futebol',
+            basquete: 'Basquete',
+            volei: 'Vôlei',
+            natacao: 'Natação',
+            ciclismo: 'Ciclismo',
+            esgrima: 'Esgrima',
+            corrida: 'Corrida',
+            'jiu-jitsu': 'Jiu-Jitsu',
+            boxe: 'Boxe'
+        };
+
+        function renderCatalogo() {
+            const produtos = window.INOFORM_PRODUTOS || {};
+            const lista = Object.values(produtos).filter(function (produto) {
+                const correspondeCategoria = categoria === 'todos' || produto.categoria === categoria;
+                const correspondeEsporte = !esporte || esporte === 'todos' || produto.esporte === esporte;
+                return correspondeCategoria && correspondeEsporte;
+            });
+
+            tituloCategoria.textContent = paginaEsportes
+                ? nomesEsportes[esporte] || 'Esportes'
+                : nomesCategorias[categoria] || 'Produtos';
+
+            if (!lista.length) {
+                catalogo.innerHTML = '<div class="catalogo-vazio">Nenhum produto encontrado nesta categoria.</div>';
+                return;
+            }
+
+            catalogo.innerHTML = lista.map(function (produto) {
+                return `
+                    <article class="produto-card">
+                        <a class="produto-card-link" href="produto.html?id=${produto.id}">
+                            <div class="produto-card-imagem">
+                                <img src="${produto.imagem}" alt="${produto.nome}">
+                            </div>
+                        </a>
+                        <div class="produto-card-conteudo">
+                            <h3>${produto.nome}</h3>
+                            <p>R$ ${Number(produto.preco).toFixed(2).replace('.', ',')}</p>
+                            <a class="produto-card-ver" href="produto.html?id=${produto.id}">Ver mais</a>
+                        </div>
+                    </article>
+                `;
+            }).join('');
+        }
+
+        document.addEventListener('DOMContentLoaded', renderCatalogo);
+    </script>
+</body>
+</html>

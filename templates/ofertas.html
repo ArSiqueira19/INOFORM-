@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>INOFORM - Ofertas</title>
+  <link rel="stylesheet" href="../static/style.css">
+  <script src="../produtos.js" defer></script>
+  <script src="../barra-pesquisa.js" defer></script>
+</head>
+<body>
+  <header>
+    <div class="header-topo">
+      <a href="index.html" class="logo" aria-label="Ir para a home">
+        <img src="../imagens/MaisImagens/Logo.png" alt="Logo da INOFORM">
+      </a>
+
+      <form class="barra-pesquisa" role="search">
+        <input type="search" id="campo-pesquisa" placeholder="O que você procura hoje?" aria-label="Pesquisar" autocomplete="off">
+        <button type="button" id="botao-pesquisa">Buscar</button>
+        <ul class="resultados-pesquisa" id="resultados-pesquisa"></ul>
+      </form>
+
+      <div class="icones">
+        <a href="login.html" title="Minha Conta">
+          <img src="../imagens/MaisImagens/Login.png" alt="Conta">
+        </a>
+        <a href="carrinho.html" title="Carrinho de Compras" aria-label="Carrinho">
+          <img src="../imagens/MaisImagens/carrinho.png" alt="Carrinho">
+          <span class="badge" data-cart-badge>0</span>
+        </a>
+      </div>
+    </div>
+
+    <nav class="menu" aria-label="Categorias">
+      <div class="item"><a href="produtos.html?cat=masculino">Masculino</a></div>
+      <div class="item"><a href="produtos.html?cat=feminino">Feminino</a></div>
+      <div class="item"><a href="produtos.html?cat=infantil">Infantil</a></div>
+      <div class="item"><a href="produtos.html?cat=acessorios">Acessórios</a></div>
+      <div class="item esportes">
+        <a href="produtos.html?esporte=todos" aria-haspopup="true">Esportes</a>
+        <div class="mega mega-esportes">
+          <div>
+            <a href="produtos.html?esporte=futebol">Futebol</a>
+            <a href="produtos.html?esporte=basquete">Basquete</a>
+            <a href="produtos.html?esporte=volei">Vôlei</a>
+          </div>
+          <div>
+            <a href="produtos.html?esporte=natacao">Natação</a>
+            <a href="produtos.html?esporte=ciclismo">Ciclismo</a>
+            <a href="produtos.html?esporte=esgrima">Esgrima</a>
+          </div>
+          <div>
+            <a href="produtos.html?esporte=corrida">Corrida</a>
+            <a href="produtos.html?esporte=jiu-jitsu">Jiu-Jitsu</a>
+            <a href="produtos.html?esporte=boxe">Boxe</a>
+          </div>
+        </div>
+      </div>
+      <div class="item"><a href="ofertas.html">Ofertas</a></div>
+    </nav>
+  </header>
+
+  <main>
+      <section class="ofertas-grade" aria-label="Ofertas">
+        <a class="oferta-produto-card" href="produto.html?id=camisa-alemanha-oferta" aria-label="Ver oferta da camisa da Alemanha">
+          <span class="oferta-produto-selo">Oferta</span>
+          <div class="oferta-produto-imagem">
+            <img src="../imagens/Ofertas/Of1.png" alt="Camisa Alemanha Away">
+          </div>
+          <div class="oferta-produto-conteudo">
+            <h2>Camisa Masculina de Futebol Torcedor Alemanha II Away 26/27 Adidas Azul</h2>
+            <div class="oferta-produto-precos">
+              <span>R$ 427,49</span>
+              <strong>R$ 199,90</strong>
+            </div>
+            <span class="oferta-cta">VER OFERTA</span>
+          </div>
+        </a>
+
+        <a class="oferta-produto-card" href="produto.html?id=bandagem-one-sport" aria-label="Ver oferta da bandagem One Sport">
+          <span class="oferta-produto-selo">Oferta</span>
+          <div class="oferta-produto-imagem">
+            <img src="../imagens/Ofertas/Of2.png" alt="Bandagem Elástica">
+          </div>
+          <div class="oferta-produto-conteudo">
+            <h2>One Sport Bandagem Atadura Elástica Muay Thai Boxe</h2>
+            <div class="oferta-produto-precos">
+              <span>R$ 31,60</span>
+              <strong>R$ 19,90</strong>
+            </div>
+            <span class="oferta-cta">VER OFERTA</span>
+          </div>
+        </a>
+
+        <a class="oferta-produto-card" href="produto.html?id=kit-venum-boxe" aria-label="Ver oferta do kit Venum Boxe">
+          <span class="oferta-produto-selo">Oferta</span>
+          <div class="oferta-produto-imagem">
+            <img src="../imagens/Ofertas/Of3.png" alt="Kit Venum Boxe">
+          </div>
+          <div class="oferta-produto-conteudo">
+            <h2>Kit Venum Boxe Muay Thai Kickboxing Luva Bandagem Bucal</h2>
+            <div class="oferta-produto-precos">
+              <span>R$ 322,99</span>
+              <strong>R$ 249,99</strong>
+            </div>
+            <span class="oferta-cta">VER OFERTA</span>
+          </div>
+        </a>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-logo">
+      <img src="../imagens/MaisImagens/Logo.png" alt="Logo da INOFORM">
+    </div>
+    <div class="footer-info">
+      <h3>INOFORM</h3>
+      <p>Sobre nós</p>
+      <p>Contato</p>
+      <p>Política de privacidade</p>
+      <p>Termos de uso</p>
+    </div>
+  </footer>
+</body>
+</html>

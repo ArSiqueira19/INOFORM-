@@ -3,19 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Entrar</title>
+  <title>Entrar | INOFORM</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@1,800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    /* ===== CORES: mude só aqui (iguais às do cadastro) ===== */
     :root {
-      --cor-fundo: #9391CD;
-      --cor-card: #ffffff;
-      --cor-texto: #1e293b;
-      --cor-texto-suave: #64748b;
-      --cor-borda: #cbd5e1;
-      --cor-destaque: #716be0;
-      --cor-destaque-hover: #5a54c2;
-      --cor-botao-texto: #ffffff;
-      --cor-erro: #dc2626;
+      --ink: #181574;
+      --violet: #716be0;
+      --lavanda: #8d88d2;
+      --mist: #f4f3ff;
+      --card: #ffffff;
+      --texto: #1c1a4d;
+      --suave: #5f5e80;
+      --borda: #d4d2ea;
+      --ok: #15803d;
+      --erro: #c62828;
+      --fonte-titulo: "Barlow Condensed", "Arial Narrow", Impact, sans-serif;
+      --ease: cubic-bezier(.22, .8, .3, 1);
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -24,49 +29,129 @@
       min-height: 100vh;
       display: flex;
       flex-direction: column;
-      background: var(--cor-fundo);
-      color: var(--cor-texto);
-      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      font-family: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+      color: var(--texto);
+      position: relative;
+      overflow-x: hidden;
+      background:
+        radial-gradient(900px 620px at 88% 8%, rgba(255, 255, 255, .38), transparent 62%),
+        radial-gradient(760px 640px at 0% 100%, rgba(24, 21, 116, .30), transparent 62%),
+        radial-gradient(520px 420px at 45% 55%, rgba(113, 107, 224, .35), transparent 70%),
+        linear-gradient(135deg, #8d88d2 0%, #9a96dc 55%, #aaa6e0 100%);
+      background-attachment: fixed;
+      -webkit-font-smoothing: antialiased;
     }
 
-    /* Logo no canto, com link pro index */
-    .topo { padding: 18px 32px; }
-    .logo { display: inline-block; line-height: 0; }
-    .logo img { height: 120px; width: auto; display: block; }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      background: repeating-linear-gradient(-58deg, transparent 0 54px, rgba(255, 255, 255, .09) 54px 108px);
+      -webkit-mask-image: radial-gradient(ellipse at 70% 40%, #000 20%, transparent 75%);
+              mask-image: radial-gradient(ellipse at 70% 40%, #000 20%, transparent 75%);
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      top: -10%;
+      right: -8%;
+      width: 46vw;
+      height: 130%;
+      z-index: 0;
+      pointer-events: none;
+      transform: skewX(-16deg);
+      background: linear-gradient(180deg, rgba(255, 255, 255, .20), rgba(255, 255, 255, .04));
+      border-left: 1px solid rgba(255, 255, 255, .35);
+    }
+
+    .topo, main { position: relative; z-index: 1; }
+
+    a { color: var(--violet); font-weight: 600; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    :focus-visible { outline: 3px solid var(--violet); outline-offset: 2px; }
+
+    .topo { padding: 20px clamp(20px, 6vw, 80px); }
+    .logo { display: inline-block; line-height: 0; transition: transform .25s var(--ease); }
+    .logo:hover { transform: scale(1.04); }
+    .logo:focus-visible { outline-color: #fff; }
+    .logo img { height: 72px; width: auto; display: block; }
 
     main {
       flex: 1;
-      display: flex;
+      display: grid;
+      grid-template-columns: 1fr minmax(0, 480px);
       align-items: center;
-      justify-content: center;
-      padding: 8px 20px 28px;
+      gap: clamp(32px, 6vw, 96px);
+      max-width: 1180px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 8px clamp(20px, 6vw, 60px) 48px;
     }
+
+    .boas-vindas { color: var(--ink); }
+    .boas-vindas h2 {
+      font-family: var(--fonte-titulo);
+      font-style: italic;
+      font-weight: 800;
+      font-size: clamp(48px, 6vw, 80px);
+      line-height: .95;
+      margin-bottom: 20px;
+    }
+    .boas-vindas > p { max-width: 38ch; font-size: 1.05rem; line-height: 1.6; margin-bottom: 28px; }
+    .vantagens { list-style: none; display: grid; gap: 14px; }
+    .vantagens li { display: flex; align-items: center; gap: 12px; font-weight: 600; }
+    .vantagens svg { flex-shrink: 0; width: 28px; height: 28px; padding: 6px; border-radius: 50%; background: rgba(255, 255, 255, .5); }
 
     .card {
-      width: 100%;
-      max-width: 400px;
-      background: var(--cor-card);
-      padding: 24px 28px;
-      border-radius: 14px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, .2);
+      background: var(--card);
+      padding: 34px 34px 28px;
+      border-radius: 24px;
+      box-shadow: 0 24px 60px rgba(24, 21, 116, .28);
+      animation: entrar .5s var(--ease) both;
     }
+    @keyframes entrar { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
 
-    h1 { font-size: 1.4rem; margin-bottom: 2px; }
-    .sub { color: var(--cor-texto-suave); margin-bottom: 16px; font-size: .9rem; }
+    h1 { font-size: 1.6rem; font-weight: 700; letter-spacing: -.01em; color: var(--ink); margin-bottom: 4px; }
+    .sub { color: var(--suave); font-size: .92rem; margin-bottom: 22px; }
 
-    label { display: block; font-size: .82rem; font-weight: 600; margin-bottom: 4px; }
+    .campo { margin-bottom: 14px; }
+    label { display: block; font-size: .83rem; font-weight: 600; margin-bottom: 6px; color: var(--ink); }
 
-    input {
+    .entrada { position: relative; }
+    input[type="text"], input[type="email"], input[type="password"] {
       width: 100%;
-      padding: 9px 12px;
-      margin-bottom: 12px;
-      border: 1px solid var(--cor-borda);
-      border-radius: 8px;
+      height: 46px;
+      padding: 0 14px;
+      border: 1.5px solid var(--borda);
+      border-radius: 12px;
+      font: inherit;
       font-size: .95rem;
-      color: var(--cor-texto);
-      background: var(--cor-card);
+      color: var(--texto);
+      background: #fff;
+      transition: border-color .15s, box-shadow .15s;
     }
-    input:focus { outline: 2px solid var(--cor-destaque); outline-offset: 1px; border-color: transparent; }
+    input::placeholder { color: #9a98bb; }
+    input:hover { border-color: #b9b6dd; }
+    input:focus { outline: none; border-color: var(--violet); box-shadow: 0 0 0 4px rgba(113, 107, 224, .18); }
+    input[aria-invalid="true"] { border-color: var(--erro); }
+    input[aria-invalid="true"]:focus { box-shadow: 0 0 0 4px rgba(198, 40, 40, .15); }
+    .entrada input[type="password"], .entrada input.com-olho { padding-right: 46px; }
+
+    .olho {
+      position: absolute; top: 50%; right: 6px; transform: translateY(-50%);
+      width: 34px; height: 34px; display: grid; place-items: center;
+      border-radius: 8px; background: transparent; color: var(--suave);
+      border: 0;
+      cursor: pointer;
+    }
+    .olho:hover { background: var(--mist); color: var(--ink); }
+    .olho svg { width: 20px; height: 20px; }
+    .olho .fechado { display: none; }
+    .olho[aria-pressed="true"] .aberto { display: none; }
+    .olho[aria-pressed="true"] .fechado { display: block; }
 
     .opcoes {
       display: flex;
@@ -74,66 +159,84 @@
       justify-content: space-between;
       gap: 12px;
       font-size: .82rem;
-      margin-bottom: 14px;
+      margin: 10px 0 16px;
     }
     .lembrar {
       display: flex;
       align-items: center;
       gap: 8px;
       margin: 0;
-      font-weight: 400;
-      color: var(--cor-texto-suave);
+      font-weight: 500;
+      color: var(--suave);
+      cursor: pointer;
     }
-    .lembrar input { width: auto; margin: 0; }
+    .lembrar input { width: 18px; height: 18px; margin: 0; accent-color: var(--ink); }
 
-    a { color: var(--cor-destaque); text-decoration: none; font-weight: 600; }
-    a:hover { text-decoration: underline; }
-
-    .erro { color: var(--cor-erro); font-size: .82rem; margin: -4px 0 10px; }
+    .erro { min-height: 1.1em; margin-top: 6px; font-size: .8rem; font-weight: 500; color: var(--erro); }
     .erro:empty { display: none; }
 
-    button {
-      width: 100%;
-      padding: 11px;
-      border: 0;
-      border-radius: 8px;
-      background: var(--cor-destaque);
-      color: var(--cor-botao-texto);
-      font-size: .95rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background .15s;
+    .botao {
+      width: 100%; height: 50px; border: 0; border-radius: 999px;
+      background: var(--ink); color: #fff;
+      font: inherit; font-size: 1rem; font-weight: 700; cursor: pointer;
+      transition: background .2s, transform .15s var(--ease), box-shadow .2s;
     }
-    button:hover { background: var(--cor-destaque-hover); }
-    button:focus-visible { outline: 2px solid var(--cor-texto); outline-offset: 2px; }
+    .botao:hover { background: #27238e; transform: translateY(-2px); box-shadow: 0 10px 22px rgba(24, 21, 116, .3); }
+    .botao:active { transform: scale(.98); }
 
-    .rodape { text-align: center; margin-top: 14px; font-size: .85rem; color: var(--cor-texto-suave); }
+    .rodape { text-align: center; margin-top: 18px; font-size: .88rem; color: var(--suave); }
 
+    @media (max-width: 900px) {
+      main { grid-template-columns: minmax(0, 480px); justify-content: center; }
+      .boas-vindas { display: none; }
+    }
     @media (max-width: 480px) {
       .topo { padding: 14px 20px; }
-      .card { padding: 22px 20px; }
+      .logo img { height: 56px; }
+      .card { padding: 26px 20px 22px; border-radius: 20px; }
     }
   </style>
 </head>
 <body>
   <header class="topo">
-    <a href="index.html" class="logo">
+    <a href="index.html" class="logo" aria-label="Voltar para a página inicial">
       <img src="../imagens/MaisImagens/Logo.png" alt="Logo da INOFORM">
     </a>
   </header>
 
   <main>
+    <section class="boas-vindas" aria-hidden="false">
+      <h2>Pagina de Login</h2>
+      <p>Faça login para acompanhar pedidos, salvar favoritos e aproveitar as melhores ofertas.</p>
+      <ul class="vantagens">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="#181574" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg>Acompanhe seus pedidos</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="#181574" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg>Salve seus produtos favoritos</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="#181574" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg>Veja as ofertas antes de todo mundo</li>
+      </ul>
+    </section>
+
     <section class="card">
       <h1>Entrar</h1>
       <p class="sub">Use o e-mail e a senha da sua conta.</p>
 
-      <form action="#" method="post" id="form">
-        <label for="email">E-mail</label>
-        <input type="email" id="email" name="email" placeholder="voce@email.com" required autocomplete="email">
+      <form action="#" method="post" id="form" novalidate>
+        <div class="campo">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" name="email" placeholder="voce@email.com" required autocomplete="email" inputmode="email" aria-describedby="erro-email">
+          <p class="erro" id="erro-email"></p>
+        </div>
 
-        <label for="senha">Senha</label>
-        <input type="password" id="senha" name="senha" placeholder="Sua senha" required autocomplete="current-password">
-        <p class="erro" id="erro" role="alert"></p>
+        <div class="campo">
+          <label for="senha">Senha</label>
+          <div class="entrada">
+            <input type="password" id="senha" name="senha" placeholder="Sua senha" minlength="6" required autocomplete="current-password" aria-describedby="erro-senha">
+            <button type="button" class="olho" aria-label="Mostrar senha" aria-pressed="false" data-alvo="senha">
+              <svg class="aberto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7S1 12 1 12z"/><circle cx="12" cy="12" r="3"/></svg>
+              <svg class="fechado" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.9 17.9A10.9 10.9 0 0112 19C5 19 1 12 1 12a18.5 18.5 0 015.1-5.9M9.9 5.1A10.9 10.9 0 0112 5c7 0 11 7 11 7a18.5 18.5 0 01-2.2 3.2M1 1l22 22"/></svg>
+            </button>
+          </div>
+          <p class="erro" id="erro-senha"></p>
+        </div>
 
         <div class="opcoes">
           <label class="lembrar">
@@ -143,7 +246,9 @@
           <a href="#">Esqueci a senha</a>
         </div>
 
-        <button type="submit">Entrar</button>
+        <p class="erro" id="erro" role="alert"></p>
+
+        <button type="submit" class="botao">Entrar</button>
       </form>
 
       <p class="rodape">Não tem conta? <a href="cadastro.html">Criar conta</a></p>
@@ -151,10 +256,42 @@
   </main>
 
   <script>
-    document.getElementById('form').addEventListener('submit', function (e) {
+    var form = document.getElementById('form');
+    var email = document.getElementById('email');
+    var senha = document.getElementById('senha');
+
+    function erroCampo(input, msgId, msg) {
+      var el = document.getElementById(msgId);
+      el.textContent = msg || '';
+      if (input) input.setAttribute('aria-invalid', msg ? 'true' : 'false');
+      return !msg;
+    }
+
+    document.querySelectorAll('.olho').forEach(function (botao) {
+      botao.addEventListener('click', function () {
+        var campo = document.getElementById(botao.dataset.alvo);
+        var mostrar = campo.type === 'password';
+        campo.type = mostrar ? 'text' : 'password';
+        botao.setAttribute('aria-pressed', mostrar);
+        botao.setAttribute('aria-label', mostrar ? 'Ocultar senha' : 'Mostrar senha');
+      });
+    });
+
+    form.addEventListener('submit', function (e) {
       e.preventDefault();
-      // TODO: conferir e-mail e senha no seu servidor aqui.
-      // Se estiver certo, vai pra página inicial:
+
+      var ok = true;
+      ok = erroCampo(email, 'erro-email', email.value && email.checkValidity() ? '' : 'Digite um e-mail válido.') && ok;
+      ok = erroCampo(senha, 'erro-senha', senha.value.length >= 6 ? '' : 'A senha precisa ter ao menos 6 caracteres.') && ok;
+
+      if (!ok) {
+        document.getElementById('erro').textContent = 'Corrija os campos destacados.';
+        var primeiro = document.querySelector('[aria-invalid="true"]');
+        if (primeiro) primeiro.focus();
+        return;
+      }
+
+      document.getElementById('erro').textContent = '';
       window.location.href = 'index.html';
     });
   </script>
